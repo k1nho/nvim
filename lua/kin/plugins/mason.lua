@@ -1,3 +1,5 @@
+-- MASON
+-- Plugin to install and manage lsps easily
 return {
   "williamboman/mason.nvim",
   dependencies = {
