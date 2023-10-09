@@ -26,6 +26,7 @@ return {
 				formatting.black,
 				formatting.goimports,
 				formatting.rustfmt,
+				diagnostics.golangci_lint,
 				diagnostics.eslint_d.with({
 					condition = function(utils)
 						utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" })
