@@ -1,2 +1,2 @@
-require('kin.core')
-require('kin.lazy')
+require("kin.core")
+require("kin.lazy")
