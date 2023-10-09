@@ -16,9 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     {import = "kin.plugins"}
 }, {
-    change_detection = {notify = false,},
-    checker = {
-        enabled = true,
-        notify = false,
-    },
+    {install = { colorscheme = "tokyonight" }},
+    change_detection = {notify = false},
+    checker = { enabled = true, notify = false},
 })

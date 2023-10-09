@@ -15,7 +15,7 @@ return {
       k_pink = "#FF5874",
       red = "#FF4A4A",
       fg = "#c3ccdc",
-      bg = "#112638",
+      bg = "#000000",
       inactive_bg = "#2c3043",
     }
 
