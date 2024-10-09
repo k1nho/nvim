@@ -1,4 +1,4 @@
--- TREESITTER
+-- TREESITTERtreesi
 -- syntax highlighting and some other neat features for working in vim
 return {
 	{
@@ -30,7 +30,9 @@ return {
 					"markdown",
 					"markdown_inline",
 					"vue",
+					"svelte",
 					"go",
+					"ocaml",
 					"rust",
 					"graphql",
 					"bash",

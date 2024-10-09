@@ -36,6 +36,7 @@ return {
 				"emmet_ls",
 				"prismals",
 				"pyright",
+				"svelte",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -44,6 +45,7 @@ return {
 		mason_tool_installer.setup({
 			ensure_installed = {
 				"prettier", -- prettier formatter
+				"ocamlformat", -- ocaml formatter
 				"stylua", -- lua formatter
 				"isort", -- python formatter
 				"black", -- python formatter

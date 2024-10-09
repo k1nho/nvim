@@ -8,6 +8,7 @@ return {
 			require("tokyonight").setup({
 				style = "night",
 				lualine_bold = true,
+				transparent = true,
 			})
 			-- load the colorscheme here
 			vim.cmd([[colorscheme tokyonight]])

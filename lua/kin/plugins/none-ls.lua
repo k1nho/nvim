@@ -20,9 +20,10 @@ return {
 			),
 			sources = {
 				formatting.prettier.with({
-					extra_filetypes = { "vue" },
+					extra_filetypes = { "svelte" },
 				}),
 				formatting.stylua,
+				formatting.ocamlformat,
 				formatting.black,
 				formatting.goimports,
 				formatting.rustfmt,

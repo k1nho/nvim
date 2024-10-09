@@ -41,7 +41,7 @@ return {
 			keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
 
 			opts.desc = "Show line diagnostics"
-			keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
+			-- keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
 			opts.desc = "Go to previous diagnostic"
 			keymap.set("n", "<C-k>", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
@@ -78,10 +78,21 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- configure vue server
-		lspconfig["volar"].setup({
+		-- configure svelte server
+		lspconfig["svelte"].setup({
 			capabilities = capabilities,
-			on_attach = on_attach,
+			on_attach = function(client, bufnr)
+				on_attach(client, bufnr)
+
+				vim.api.nvim_create_autocmd("BufWritePost", {
+					pattern = { "*.js", "*.ts" },
+					callback = function(ctx)
+						if client.name == "svelte" then
+							client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+						end
+					end,
+				})
+			end,
 		})
 
 		-- configure css server
@@ -113,11 +124,17 @@ return {
 		lspconfig["emmet_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "vue" },
+			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "vue", "eml" },
 		})
 
 		-- configure golang server
 		lspconfig["gopls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure c, c++ server
+		lspconfig["clangd"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
@@ -129,6 +146,24 @@ return {
 
 		-- configure python server
 		lspconfig["pyright"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		lspconfig["ocamllsp"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+		lspconfig["dockerls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+		lspconfig["docker_compose_language_service"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		lspconfig["yamlls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})

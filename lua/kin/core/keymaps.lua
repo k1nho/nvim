@@ -67,3 +67,13 @@ keymap.set("v", "K", ":m '<-2<cr>gv=gv")
 -- Comment/uncomment Line command (//) (TS, JS, C++, Go)
 keymap.set("v", "<leader>c", [[:s,^,//,g<CR>:noh<CR>]])
 keymap.set("v", "<leader>u", [[:s,//,,g<CR>:noh<CR>]])
+
+-- remove all spaces in all lines (AOC macro)
+-- keymap.set("n", "<leader>s", ":%s/\\s\\+//g")
+
+-- remove all occurrences of a symbol (# % ,)
+keymap.set("n", "<leader>z", ":%s///gI<left><left><left><left>")
+
+-- for neovim terminal emulator (map to regular escape to normal mode)
+keymap.set("t", "<Esc>", "<C-\\><C-n>")
+keymap.set("t", "jk", "<C-\\><C-n>")
