@@ -150,10 +150,6 @@ return {
 			on_attach = on_attach,
 		})
 
-		lspconfig["ocamllsp"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
 		lspconfig["dockerls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,

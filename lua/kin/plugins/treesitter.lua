@@ -32,7 +32,6 @@ return {
 					"vue",
 					"svelte",
 					"go",
-					"ocaml",
 					"rust",
 					"graphql",
 					"bash",

@@ -23,7 +23,6 @@ return {
 					extra_filetypes = { "svelte" },
 				}),
 				formatting.stylua,
-				formatting.ocamlformat,
 				formatting.black,
 				formatting.goimports,
 				formatting.rustfmt,
